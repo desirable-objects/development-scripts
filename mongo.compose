@@ -1,5 +1,8 @@
 mongo:
   image: mongo:3.3
+  ports:
+    - 27017:27017
+    - 27018:27018
 
 genghis:
   image: dockervan/genghis
