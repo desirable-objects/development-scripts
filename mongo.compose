@@ -1,0 +1,9 @@
+mongo:
+  image: mongo:3.3
+
+genghis:
+  image: dockervan/genghis
+  links:
+    - mongo:db
+  ports:
+    - '5678:5678'
