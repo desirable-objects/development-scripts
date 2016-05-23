@@ -4,9 +4,12 @@ mongo:
     - 27017:27017
     - 27018:27018
 
-genghis:
-  image: dockervan/genghis
+client:
+  image: giangndm/mongoclient
   links:
     - mongo:db
   ports:
-    - '5678:5678'
+    - 5678:80
+  environment:
+    - MONGO_URL=mongodb://db/vendigo
+    - ROOT_URL=http://localhost:5678/

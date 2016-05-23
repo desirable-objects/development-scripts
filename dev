@@ -1,0 +1,12 @@
+#!/bin/bash
+
+task=$1
+
+case $task in
+mongo)
+  docker-compose -f mongo.compose up
+  ;;
+*)
+  echo "Unknown task: $task"
+  ;;
+esac
